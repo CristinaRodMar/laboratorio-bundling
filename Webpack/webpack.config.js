@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
     export default {
     mode: "development",
     entry: {
-        app: "./src/index.js",
+        app: "./src/index.jsx",
     },
 
     output: {
@@ -23,22 +23,15 @@ const __dirname = path.dirname(__filename);
         rules: [
         {
             test: /\.scss$/,
-            use: [
-            MiniCssExtractPlugin.loader,
-            "css-loader",
-            {
-                loader: "sass-loader",
-                options: {
-                sassOptions: {
-                quietDeps: true,    
-                },
-                },
-            },
-            ],
+            use: [ MiniCssExtractPlugin.loader, "css-loader",
+                    {
+                        loader: "sass-loader", options: { sassOptions: { quietDeps: true,} },
+                    },
+                ],
         },
         {
             test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"], // coherente con MiniCssExtract
+            use: [MiniCssExtractPlugin.loader, "css-loader"], 
         },
         {
             test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
@@ -46,6 +39,11 @@ const __dirname = path.dirname(__filename);
             generator: {
             filename: "assets/[name][hash][ext]",
             },
+        },
+        {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
         },
         ],
     },
