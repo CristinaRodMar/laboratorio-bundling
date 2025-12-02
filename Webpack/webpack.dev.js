@@ -16,7 +16,7 @@ export default merge(common, {
         exclude: /node_modules/,
         use: [
           "style-loader",
-          "css-loader",           // ← Sin modules → clases globales
+          "css-loader",          
           "sass-loader",
         ],
       },

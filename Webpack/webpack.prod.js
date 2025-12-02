@@ -41,7 +41,7 @@ export default merge(common, {
             loader: "sass-loader",
             options: {
               sassOptions: {
-                quietDeps: true, // Silencia todos los warnings de Bootstrap
+                quietDeps: true,
               },
             },
           },
@@ -59,6 +59,6 @@ export default merge(common, {
     }),
   ],
   performance: {
-    hints: false, // Elimina los warnings de "asset size limit"
+    hints: false, 
   },
 });
