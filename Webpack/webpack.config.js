@@ -1,5 +1,4 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -22,23 +21,12 @@ const __dirname = path.dirname(__filename);
     module: {
         rules: [
         {
-            test: /\.scss$/,
-            use: [ MiniCssExtractPlugin.loader, "css-loader",
-                    {
-                        loader: "sass-loader", options: { sassOptions: { quietDeps: true,} },
-                    },
-                ],
+        test: /\.(png|jpg)$/,
+        type: "asset/resource",
         },
         {
-            test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"], 
-        },
-        {
-            test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-            type: "asset/resource",
-            generator: {
-            filename: "assets/[name][hash][ext]",
-            },
+        test: /\.html$/,
+        loader: "html-loader",
         },
         {
             test: /\.jsx?$/,

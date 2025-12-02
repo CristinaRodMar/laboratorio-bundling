@@ -1,4 +1,4 @@
-@use "bootstrap" as *;
+@use "~bootstrap/scss/bootstrap" as *;
 
 #root {
     text-align: center;
@@ -7,10 +7,10 @@
     padding: 0 20px;
 
     h1 {
-        font-size: 3.5rem; 
+        font-size: 3.5rem;
         color: #b1ce30;
         text-transform: uppercase;
-        letter-spacing: 0.08em; 
+        letter-spacing: 0.08em;
         margin: 0;
         line-height: 1.2;
     }
@@ -26,6 +26,7 @@
 
     .carousel-item {
         height: 500px;
+
         img {
             width: 100%;
             height: 100%;

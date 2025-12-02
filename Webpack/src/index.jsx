@@ -5,7 +5,6 @@ import logo2 from '../content/Bootstrap_logo.svg.png';
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const imgs = document.querySelectorAll('#carouselExampleFade img');
     if (imgs[0]) imgs[0].src = logo1;
